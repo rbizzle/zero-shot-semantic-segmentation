@@ -28,7 +28,7 @@ from firebase_admin import credentials, firestore, storage
 
 # Hugging Face Inference Endpoint
 HF_ENDPOINT_URL = "https://p6def67acw3ebe9z.us-east-1.aws.endpoints.huggingface.cloud"
-HF_API_KEY = os.environ.get('HF_API_KEY', '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')  # Default token provided
+HF_API_KEY = os.environ.get('HF_API_KEY', 'Your-API-Key')  # Default token provided
 CONFIDENCE_THRESHOLD = 0.5  # Only save labels with confidence above this threshold
 
 # Firestore configuration
@@ -419,3 +419,4 @@ def process_zoom20_from_zoom15(lat, lon, force=False, overlap=0):
 if __name__ == "__main__":
     total_count = process_zoom20_from_zoom15(lat=18.0384131, lon=-77.8600417)
     log(f"Pipeline completed. Total classifications: {total_count}")
+
