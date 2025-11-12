@@ -37,7 +37,7 @@ def process_area(area_key=None, lat=None, lon=None, name=None):
     
     if area_key:
         if area_key not in AREAS:
-            log(f"❌ Unknown area: {area_key}")
+            log(f"Unknown area: {area_key}")
             log(f"Available areas: {', '.join(AREAS.keys())}")
             return
         
@@ -53,7 +53,7 @@ def process_area(area_key=None, lat=None, lon=None, name=None):
         log(f"Processing custom location: {name}")
     
     else:
-        log("❌ Must provide either area_key or lat/lon coordinates")
+        log("Must provide either area_key or lat/lon coordinates")
         return
     
     # Run the inference pipeline
@@ -147,4 +147,5 @@ Available areas:
 
 if __name__ == "__main__":
     main()
+
 
