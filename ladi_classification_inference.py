@@ -107,18 +107,18 @@ try:
             exists = False
 
         if not exists:
-            print(f"⚠ Storage bucket '{bucket.name if hasattr(bucket, 'name') else STORAGE_BUCKET}' does not exist or is inaccessible.")
+            print(f" Storage bucket '{bucket.name if hasattr(bucket, 'name') else STORAGE_BUCKET}' does not exist or is inaccessible.")
             bucket = None
     except Exception as e:
-        print(f"⚠ Could not access storage bucket: {e}")
+        print(f" Could not access storage bucket: {e}")
         bucket = None
     print(f"✓ Firebase initialized successfully")
     if bucket is not None:
-        print(f"✓ Storage bucket: {bucket.name}")
+        print(f" Storage bucket: {bucket.name}")
     else:
-        print(f"⚠ No accessible storage bucket configured.")
+        print(f" No accessible storage bucket configured.")
 except Exception as e:
-    print(f"⚠ Firebase initialization failed: {e}")
+    print(f" Firebase initialization failed: {e}")
     db = None
     bucket = None
 
@@ -405,9 +405,9 @@ def process_zoom20_from_zoom15(lat, lon, force=False, overlap=0):
     log(f"Total runtime: {time.time()-overall_start:.2f}s")
     
     if db:
-        log(f"✓ All classifications saved to Firestore collection: {FIRESTORE_COLLECTION}")
+        log(f" All classifications saved to Firestore collection: {FIRESTORE_COLLECTION}")
     else:
-        log(f"⚠ Firestore not available - no classifications saved")
+        log(f" Firestore not available - no classifications saved")
     
     return total_classifications
 
@@ -419,4 +419,5 @@ def process_zoom20_from_zoom15(lat, lon, force=False, overlap=0):
 if __name__ == "__main__":
     total_count = process_zoom20_from_zoom15(lat=18.0384131, lon=-77.8600417)
     log(f"Pipeline completed. Total classifications: {total_count}")
+
 
