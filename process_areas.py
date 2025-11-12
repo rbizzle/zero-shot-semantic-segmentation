@@ -58,7 +58,7 @@ def process_area(area_key=None, lat=None, lon=None, name=None):
     
     # Run the inference pipeline
     total_count = process_zoom20_from_zoom15(lat=lat, lon=lon)
-    log(f"✅ Completed {name}: {total_count} detections saved to Firestore")
+    log(f"Completed {name}: {total_count} detections saved to Firestore")
     
     return total_count
 
@@ -78,10 +78,10 @@ def process_all_areas():
         count = process_area(area_key=key)
         total_all += count
         
-        log(f"✅ {area['name']} complete: {count} detections")
+        log(f"{area['name']} complete: {count} detections")
     
     log(f"\n{'='*60}")
-    log(f"🎉 ALL AREAS COMPLETE: {total_all} total detections")
+    log(f"ALL AREAS COMPLETE: {total_all} total detections")
     log(f"{'='*60}")
 
 
@@ -147,3 +147,4 @@ Available areas:
 
 if __name__ == "__main__":
     main()
+
